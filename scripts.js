@@ -1,3 +1,4 @@
+
 function addValues(obj) {
     const attributes = document.querySelectorAll(".results-sum__variable");
     const score = document.querySelector(".results-sum__result-number");
@@ -35,3 +36,13 @@ async function displayData() {
 }
 
 displayData();
+
+function resetPage() {
+  const continueButton = document.querySelector(".results-sum__continue-button");
+  continueButton.addEventListener('click', function() {
+    console.log('button clicked')
+    window.location.reload();
+  })
+}
+
+resetPage();
