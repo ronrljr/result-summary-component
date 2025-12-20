@@ -1,34 +1,37 @@
-const valueObj = [
-  {
-    "category": "Reaction",
-    "score": 80,
-    "icon": "./assets/images/icon-reaction.svg"
-  },
-  {
-    "category": "Memory",
-    "score": 92,
-    "icon": "./assets/images/icon-memory.svg"
-  },
-  {
-    "category": "Verbal",
-    "score": 61,
-    "icon": "./assets/images/icon-verbal.svg"
-  },
-  {
-    "category": "Visual",
-    "score": 72,
-    "icon": "./assets/images/icon-visual.svg"
-  }
-];
-
-function addValues() {
+function addValues(obj) {
     const attributes = document.querySelectorAll(".results-sum__variable");
     const score = document.querySelector(".results-sum__result-number");
-    attributes.forEach((att, i) => att.innerHTML = valueObj[i].score);
-    const scoreVal = valueObj.reduce((acc, val) => {
+    const attName = document.querySelectorAll(".results-sum__attribute");
+    if (!score || attributes.length === 0) return;
+    if (!obj.every((ele, i) => {
+      return ele.category === attName[i].textContent;
+    })) {
+      throw new Error('Something went wrong!');
+    }
+    attributes.forEach((att, i) => {
+      if (obj[i]) {
+        att.textContent = obj[i].score
+      };
+    });
+    const scoreVal = obj.reduce((acc, val) => {
         return acc + val.score;
     }, 0);
-    score.innerHTML = Math.round(scoreVal / valueObj.length);
+    score.textContent = Math.round(scoreVal / obj.length);
 }
 
-addValues();
+async function displayData() {
+  const url = './data.json';
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error('Response failed!');
+    }
+    const data = await response.json();
+    addValues(data);
+  } catch(error) {
+    console.log(error);
+    console.log('Something went wrong!');
+  }
+}
+
+displayData();
