@@ -64,7 +64,6 @@
     }
 
     .results-sum__half {
-        width: 50%;
         flex: 1;
         display: flex;
         flex-direction: column;
@@ -251,10 +250,6 @@
             flex-direction: column;
         }
 
-        .results-sum__half {
-            width: 100%;
-        }
-
         .results-page-container {
             height: auto;
         }
@@ -288,5 +283,6 @@
             font-size: clamp(1.4rem, 4.8vw, 1.6rem);
         }
     }
+
 
 
