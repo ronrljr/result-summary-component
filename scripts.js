@@ -1,15 +1,16 @@
 
-function createStatBox() {
+function createStatBox(category) {
   const box = document.createElement("div");
   box.className = "results-sum__stat-box";
+  box.setAttribute("role", "listitem");
 
   box.innerHTML = `
     <div class="results-sum__summary-half results-sum__summary-half--attributes">
-      <img class="results-sum__icon" alt="" />
-      <h3 class="results-sum__attribute"></h3>
+      <img class="results-sum__icon" alt="" aria-hidden="true" />
+      <h3 class="results-sum__attribute">${category}</h3>
     </div>
     <div class="results-sum__summary-half results-sum__summary-half--score">
-      <p class="results-sum__score">
+      <p class="results-sum__score" aria-label="${category} score out of 100">
         <span class="results-sum__variable">0</span> / 100
       </p>
     </div>
@@ -80,3 +81,4 @@ function resetPage() {
 };
 
 resetPage();
+
