@@ -56,7 +56,7 @@
 
     .results-sum {
         width: 73.5rem;
-        height: 51rem;
+        min-height: 51rem;
         display: flex;
         border-radius: 3rem;
         background-color: #fff;
@@ -239,4 +239,5 @@
     .results-sum__continue-button:active {
         background-color: hsl(241, 96%, 37%);
     }
+
 
