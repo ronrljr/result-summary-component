@@ -172,35 +172,35 @@
         padding-right: 1rem;
     }
 
-    .results-sum__stat-box--reaction {
+    .results-sum__stat-box--Reaction {
        background-color: rgb(255, 246, 247);
     }
 
-    .results-sum__stat-box--memory {
+    .results-sum__stat-box--Memory {
        background-color: rgb(255, 250, 244);
     }
 
-    .results-sum__stat-box--verbal {
+    .results-sum__stat-box--Verbal {
        background-color: rgb(242, 253, 249);
     }
 
-    .results-sum__stat-box--visual {
+    .results-sum__stat-box--Visual {
        background-color: rgb(244, 244, 254);
     }
 
-    .results-sum__attribute--reaction {
+    .results-sum__attribute--Reaction {
         color: var(--light-red);
     }
 
-    .results-sum__attribute--memory {
+    .results-sum__attribute--Memory {
         color: var(--orange-yellow);
     }
 
-    .results-sum__attribute--verbal {
+    .results-sum__attribute--Verbal {
         color: var(--green-teal);
     }
 
-    .results-sum__attribute--visual {
+    .results-sum__attribute--Visual {
         color: var(--cobalt-blue);
     }
 
@@ -240,4 +240,52 @@
         background-color: hsl(241, 96%, 37%);
     }
 
+    .testbox {
+        width: 100%;
+        height: 10%;
+        background-color: red;
+    }
+
+    @media screen and (max-width: 600px) {
+        .results-sum {
+            flex-direction: column;
+        }
+
+        .results-sum__half {
+            width: 100%;
+        }
+
+        .results-page-container {
+            height: auto;
+        }
+
+        .results-sum__half--result {
+            border-top-left-radius: 0%;
+            border-top-right-radius: 0%;
+        }
+    }
+
+    @media screen and (max-width: 423px) {
+        .results-sum__result-heading, .results-sum__summary-heading {
+            font-size: 2.2rem;
+        }
+
+        .results-sum__half--result {
+            padding: 3rem;
+        }
+
+        .results-sum__circle {
+            width: 16rem;
+            height: 16rem;
+        }
+
+        .results-sum__praise {
+            font-size: 2.8rem;
+        }
+
+        .results-sum__breakdown {
+            /* font-size: 1.6rem; */
+            font-size: clamp(1.4rem, 4.8vw, 1.6rem);
+        }
+    }
 
