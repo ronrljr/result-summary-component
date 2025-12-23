@@ -35,6 +35,7 @@ function addValues(obj) {
     const score = document.querySelector(".results-sum__result-number");
     const attName = document.querySelectorAll(".results-sum__attribute");
     const box = document.querySelectorAll(".results-sum__stat-box");
+    const icons = document.querySelectorAll(".results-sum__icon");
 
      if (!score || attributes.length === 0) return;
     
@@ -44,6 +45,7 @@ function addValues(obj) {
         attName[i].textContent = obj[i].category;
         box[i].classList.add(`results-sum__stat-box--${obj[i].category}`);
         attName[i].classList.add(`results-sum__attribute--${obj[i].category}`);
+        icons[i].setAttribute("src", obj[i].icon);
       }
     });
 
@@ -81,4 +83,5 @@ function resetPage() {
 };
 
 resetPage();
+
 
