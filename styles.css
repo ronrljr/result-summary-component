@@ -266,7 +266,7 @@
         }
 
         .results-sum__half--result {
-            padding: 3rem;
+            padding: 2rem;
         }
 
         .results-sum__circle {
@@ -283,6 +283,7 @@
             font-size: clamp(1.4rem, 4.8vw, 1.6rem);
         }
     }
+
 
 
 
